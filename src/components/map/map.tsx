@@ -1,6 +1,8 @@
 import { DeckGL } from '@deck.gl/react';
 import { Map } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { useEffect } from 'react';
+import { observatoryUseCase } from '../../shared/usecases/observatory/observatory';
 
 const MAP_BOX_TOKEN = import.meta.env.PUBLIC_MAPBOX_TOKEN;
 
@@ -13,6 +15,12 @@ const INITIAL_VIEW_STATE = {
 };
 
 export const AppMap = (): JSX.Element => {
+  useEffect(() => {
+    observatoryUseCase()
+      .get()
+      .then((v) => console.log(v));
+  }, []);
+
   return (
     <div>
       <DeckGL initialViewState={INITIAL_VIEW_STATE} controller={true}>
