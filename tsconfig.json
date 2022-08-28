@@ -1,3 +1,8 @@
 {
+  "compilerOptions": {
+  
+    "jsxImportSource": "preact",
+    "jsx": "preserve"
+  },
   "extends": "astro/tsconfigs/strict"
 }
