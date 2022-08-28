@@ -21,7 +21,7 @@ export const AppMap = (): JSX.Element => {
         controller={true}
       >
         <Map 
-          mapStyle="mapbox://styles/mapbox/streets-v11"
+          mapStyle="mapbox://styles/studio-kakky/ckuhpi5vm4jf717qm72rknulj"
           mapboxAccessToken={MAP_BOX_TOKEN} 
         />
       </DeckGL>
