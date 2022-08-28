@@ -1,5 +1,4 @@
-import DeckGL from '@deck.gl/react/typed';
-import { LineLayer } from '@deck.gl/layers/typed';
+import { DeckGL } from '@deck.gl/react';
 import { Map } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
