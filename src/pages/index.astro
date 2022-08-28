@@ -1,11 +1,11 @@
 ---
-import { Sample } from '../components/sample';
 import Layout from '../layouts/Layout.astro';
+import { AppMap } from '../components/map/map'
 ---
 
 <Layout title="地図 データ可視化 習作">
 	<main>
 		<h1>タイトル</h1>
-		<Sample />
+		<AppMap client:visible />
 	</main>
 </Layout>
