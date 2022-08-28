@@ -1,5 +1,9 @@
 import DeckGL from '@deck.gl/react/typed';
 import {LineLayer} from '@deck.gl/layers/typed';
+import {Map} from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+const MAP_BOX_TOKEN = import.meta.env.PUBLIC_MAPBOX_TOKEN
 
 const INITIAL_VIEW_STATE = {
   longitude: -122.41669,
@@ -9,18 +13,19 @@ const INITIAL_VIEW_STATE = {
   bearing: 0
 };
 
-const lineData = [
-  {sourcePosition: [-122.41669, 37.7853], targetPosition: [-122.41669, 37.781]}
-];
-
 export const AppMap = (): JSX.Element => {
-  const layers = [
-    new LineLayer({id: 'line-layer', data: lineData})
-  ];
-
-  return <div><DeckGL
-      initialViewState={INITIAL_VIEW_STATE}
-      controller={true}
-      layers={layers} /></div>;
+  return (
+    <div>
+      <DeckGL
+        initialViewState={INITIAL_VIEW_STATE}
+        controller={true}
+      >
+        <Map 
+          mapStyle="mapbox://styles/mapbox/streets-v11"
+          mapboxAccessToken={MAP_BOX_TOKEN} 
+        />
+      </DeckGL>
+    </div>
+  );
 
 }
