@@ -3,6 +3,8 @@ import { Map } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect } from 'react';
 import { observatoryUseCase } from '../../shared/usecases/observatory/observatory';
+import { meshWeatherUsecase } from '../../shared/usecases/meshWeather/meshWeather';
+import { AppDateTime } from '../../shared/models/date/AppDateTime';
 
 const MAP_BOX_TOKEN = import.meta.env.PUBLIC_MAPBOX_TOKEN;
 
@@ -16,8 +18,8 @@ const INITIAL_VIEW_STATE = {
 
 export const AppMap = (): JSX.Element => {
   useEffect(() => {
-    observatoryUseCase()
-      .get()
+    meshWeatherUsecase()
+      .getMeshWeathers(AppDateTime.now().addMinutes(-30).floor10Minutes())
       .then((v) => console.log(v));
   }, []);
 
