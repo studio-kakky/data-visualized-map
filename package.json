@@ -34,7 +34,9 @@
   },
   "dependencies": {
     "@danmarshall/deckgl-typings": "^4.9.25",
+    "@types/luxon": "^3.0.0",
     "deck.gl": "^8.8.9",
+    "luxon": "^3.0.2",
     "node-fetch": "^3.2.10",
     "react-map-gl": "^7.0.19",
     "ts-node": "^10.9.1"
