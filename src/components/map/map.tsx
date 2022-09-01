@@ -1,7 +1,7 @@
 import { DeckGL } from '@deck.gl/react';
 import { ColumnLayer } from '@deck.gl/layers';
 import { Map } from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import './mapbox-gl.css';
 import { useEffect, useState } from 'react';
 import { meshWeatherUsecase } from '../../shared/usecases/meshWeather/meshWeather';
 import { AppDateTime } from '../../shared/models/date/AppDateTime';
