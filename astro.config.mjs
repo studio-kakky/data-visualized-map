@@ -7,7 +7,7 @@ export default defineConfig({
   vite: {
     build: {
       rollupOptions: {
-        external: ["mapbox-gl"],
+        external: ["mapbox-gl", "mapbox-gl/dist/mapbox-gl.css"],
       },
     },
   },
