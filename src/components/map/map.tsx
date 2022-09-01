@@ -3,7 +3,6 @@ import { ColumnLayer } from '@deck.gl/layers';
 import { Map } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useState } from 'react';
-import { observatoryUseCase } from '../../shared/usecases/observatory/observatory';
 import { meshWeatherUsecase } from '../../shared/usecases/meshWeather/meshWeather';
 import { AppDateTime } from '../../shared/models/date/AppDateTime';
 import type { MeshWeather } from '../../shared/models/amdas/MeshWeather';
@@ -18,14 +17,9 @@ const INITIAL_VIEW_STATE = {
   bearing: 0,
 };
 
-interface Item {
-  centroid: [number, number];
-  value: number;
-}
-
 export const AppMap = (): JSX.Element => {
   const [percipitationLayer, setPercipitationLayer] =
-    useState<ColumnLayer<any>>();
+    useState<ColumnLayer<MeshWeather>>();
   useEffect(() => {
     meshWeatherUsecase()
       .getMeshWeathers(AppDateTime.now().addMinutes(-30).floor10Minutes())

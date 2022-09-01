@@ -1,5 +1,4 @@
 import { httpGet } from '../../../../libs/http/httpGet';
-import type { ApiGetParams } from '../../../../models/base/api/GetParams';
 import type { AppDateTime } from '../../../../models/date/AppDateTime';
 import type { MeshWeathersResponse } from './GetResponse';
 

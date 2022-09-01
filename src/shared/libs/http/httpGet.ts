@@ -1,4 +1,4 @@
-import type { ApiGetParams } from '../models/base/api/GetParams';
+import type { ApiGetParams } from '../../models/base/api/GetParams';
 import { httpRequest } from './httpRequest';
 import { makeUrlPath } from './makeUrlPath';
 

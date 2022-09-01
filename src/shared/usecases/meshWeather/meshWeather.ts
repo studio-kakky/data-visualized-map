@@ -11,7 +11,7 @@ export const meshWeatherUsecase = () => {
 
     return Object.entries(meshWeatherRes)
       .filter(([key]) => observatoryCollection[key] !== undefined)
-      .filter(([_, res]) => hasPrecipitation(res))
+      .filter(([, res]) => hasPrecipitation(res))
       .map(([key, res]) => {
         const observatory = observatoryCollection[key];
         return adaptMeshWeather(res, observatory.coordinates);
