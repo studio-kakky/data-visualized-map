@@ -8,5 +8,8 @@ export interface MeshWeather {
     perThreeHour: number;
     perDay: number;
   };
-  coordinate: [number, number];
+  coordinate: {
+    lat: number;
+    lng: number;
+  };
 }

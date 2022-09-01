@@ -25,7 +25,10 @@ export const adaptMeshWeather = (
       perThreeHour: res.precipitation3h[0],
       perDay: res.precipitation24h[0],
     },
-    coordinate,
+    coordinate: {
+      lat: coordinate[1],
+      lng: coordinate[0],
+    },
     ...temp,
     ...humidity,
     ...sunshinePerHour,
